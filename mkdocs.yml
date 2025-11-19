@@ -9,32 +9,39 @@ nav:
   - Privacy Policy: ISP013-Privacy Policy.md
   - User Registration Policy: ISP014-User Registration Policy.md
   - Network Security Policy: ISP015-Network Security Policy.md
-  # Add any other existing .MD files here, e.g.:
-  # - Another Policy: another-policy.md
 theme:
   name: material
   palette:
-    primary: indigo  # Customize as before
+    primary: indigo
     accent: blue
-  logo: assets/logo.png
+  logo: assets/2025_Primary_Logo_RGB.png  # Add your Community Fibre logo here (place in docs/assets/)
   favicon: assets/favicon.ico
   font:
-    text: Roboto
+    text: Poppins
   features:
-    - navigation.tabs  # Adds top tabs for multi-page nav
-    - toc.follow  # Auto-scrolls the TOC sidebar as you read
-    - navigation.sections  # Groups nav items if needed
+    - navigation.tabs
+    - toc.follow
+    - navigation.sections
+    - content.code.annotate  # For any code blocks
+    - navigation.top  # Back-to-top button
 markdown_extensions:
-  - toc:  # Enables auto-TOC from headers; supports permalink anchors
-      permalink: true  # Adds ¶ links next to headers for easy sharing
-      title: Table of Contents  # Custom TOC title in sidebar
-  - attr_list:  # Handles { #id .class } for custom IDs/classes on elements (fixes your .TOC-Heading)
-  - tables:  # Renders | pipe tables as HTML (fixes raw +--- borders)
-  - pymdownx.superfences:  # Improved fenced code blocks (useful for any policy examples)
-  - pymdownx.details:  # Adds collapsible <details> sections (e.g., for glossaries)
-  - admonition:  # Enables note/warning/info boxes (common in security policies)
-  - footnotes:  # If your docs use [^1] style references
+  - toc:
+      permalink: true
+      title: Table of Contents
+      slugify: !!python/name:pymdownx.slugs.uslugify  # Better slugs for anchors
+  - attr_list:  # For {#id .class} on headings/elements
+  - tables:  # Pipe tables
+  - pymdownx.superfences:  # Fenced code, diagrams
+  - pymdownx.details:  # Collapsible sections (e.g., for glossaries)
+  - admonition:  # Note/warning boxes
+  - footnotes:  # For references
+  - pymdownx.tabbed:  # Tabbed content if needed for complex sections
+  - pymdownx.highlight:  # Code highlighting
+  - pymdownx.inlinehilite
+  - pymdownx.snippets  # Include snippets from other files if reusable
 plugins:
-  - search:  # Adds site-wide search bar (helpful for multiple policies)
+  - search
+  - pdf-export:  # For exporting to PDF (closer to original format)
+      combined: true  # Single PDF output
 extra_css:
-  - styles/custom.css
+  - styles/custom.css  # Your custom styles (create this file)
