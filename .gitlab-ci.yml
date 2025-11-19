@@ -5,8 +5,12 @@ stages:
 build:
   stage: build
   image: python:3.9
-  script:
+  before_script:
+    - apt-get update -y
+    - apt-get install -y libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf-2.0-0 libffi-dev shared-mime-info
+    - pip install --upgrade pip
     - pip install -r requirements.txt
+  script:
     - mkdocs build --site-dir _site
   artifacts:
     paths:
