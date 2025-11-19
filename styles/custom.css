@@ -1,4 +1,56 @@
-:root {
-  --md-primary-fg-color: #00ab4e;
+/* Heading styles from PDF */
+.Heading-3_Green {
+  color: #008000;  /* Green like PDF subheadings */
+  font-weight: bold;
+  margin-top: 1em;
 }
-/* Add more CSS for headers, buttons, etc. */
+
+/* TOC styling */
+.TOC-Heading {
+  font-size: 1.2em;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Tables: Match PDF borders and alignment */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1em;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}
+
+/* Colors in objectives table (e.g., Green as green text) */
+.green { color: green; }
+.amber { color: orange; }
+.red { color: red; }
+.grey { color: grey; }
+.pink { color: pink; }
+
+/* Approximate page footers (for print/PDF export) */
+@media print {
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8em;
+    color: grey;
+  }
+  footer::before {
+    content: "Document Number: ISP001 | Revision: 2.1 | Date: 13/10/2025 | Page " counter(page) " of 34";
+  }
+}
+
+/* Docusign or signature styling */
+.docusign {
+  font-style: italic;
+  color: grey;
+  border-top: 1px dashed #ccc;
+}
