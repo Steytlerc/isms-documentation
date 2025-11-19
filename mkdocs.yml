@@ -24,6 +24,16 @@ theme:
     - navigation.sections
     - content.code.annotate  # For any code blocks
     - navigation.top  # Back-to-top button
+  palette:
+  - scheme: default  # Light mode
+    primary: indigo
+    accent: blue
+  - scheme: slate    # Dark mode toggle
+    primary: black
+    accent: teal
+features:
+  - content.tabs.link  # Better navigation
+  - navigation.instant # Faster page loads
 markdown_extensions:
   - toc:
       permalink: true

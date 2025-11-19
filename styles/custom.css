@@ -54,3 +54,60 @@ th {
   color: grey;
   border-top: 1px dashed #ccc;
 }
+
+/* NEW: Better typography for readability */
+body {
+  font-family: 'Roboto', sans-serif;  /* Matches your mkdocs.yml; add fallbacks if needed */
+  line-height: 1.6;
+  color: #333;
+}
+
+/* NEW: Subtle shadows and borders for cards/sections */
+.md-content {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);  /* Soft elevation for depth */
+  padding: 1.5em;
+}
+
+/* NEW: Gradient hero/banner for home or key pages (add class .hero to a div in Markdown) */
+.hero {
+  background: linear-gradient(135deg, #3f51b5, #2196f3);  /* Indigo-blue gradient */
+  color: white;
+  padding: 2em;
+  border-radius: 8px;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+/* NEW: Enhanced code blocks (if policies have examples) */
+pre code {
+  background: #f6f8fa;
+  border-radius: 4px;
+  padding: 1em;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* NEW: Button/link styling for calls-to-action (e.g., "Download PDF") */
+a.md-button {
+  background: #2196f3;  /* Accent color */
+  color: white !important;
+  border-radius: 4px;
+  transition: background 0.3s ease;  /* Subtle hover animation */
+}
+a.md-button:hover {
+  background: #1976d2;
+}
+
+/* NEW: Icon integration (use with attr_list extension, e.g., {: .icon-check } in MD) */
+.icon-check:before {
+  content: "\2714";  /* Unicode checkmark; or use Font Awesome via extra_js */
+  margin-right: 0.5em;
+  color: #4caf50;
+}
+
+/* NEW: Dark mode overrides (if enabled in palette) */
+[data-md-color-scheme="slate"] {
+  --md-default-fg-color: #e0e0e0;  /* Lighter text for contrast */
+  table th { background-color: #424242; }
+}
