@@ -14,10 +14,10 @@ theme:
   palette:
     primary: indigo
     accent: blue
-  logo: assets/2025_Primary_Logo_RGB.png  # Add your Community Fibre logo here (place in docs/assets/)
+  logo: assets/logo.png  # Add your Community Fibre logo here (place in docs/assets/)
   favicon: assets/favicon.ico
   font:
-    text: Poppins
+    text: Roboto
   features:
     - navigation.tabs
     - toc.follow
@@ -41,7 +41,6 @@ markdown_extensions:
   - pymdownx.snippets  # Include snippets from other files if reusable
 plugins:
   - search
-  - pdf-export:  # For exporting to PDF (closer to original format)
-      combined: true  # Single PDF output
+  - print-site  # Adds a combined printable page
 extra_css:
-  - styles/custom.css  # Your custom styles (create this file)
+  - styles/custom.css  # Your custom styles (keep as before)

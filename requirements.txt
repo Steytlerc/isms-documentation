@@ -1,3 +1,3 @@
 mkdocs
 mkdocs-material  # Popular theme for branding
-mkdocs-pdf-export-plugin  # For PDF export functionality
+mkdocs-print-site-plugin  # For printable combined HTML (browser PDF)
