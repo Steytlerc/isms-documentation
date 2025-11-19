@@ -54,5 +54,6 @@ markdown_extensions:
 
 plugins:
   - search
-  - mkdocs-awesome-pages-plugin
-  - mkdocs-minify-plugin
+  - awesome-pages      # ← correct (not mkdocs-awesome-pages-plugin)
+  - minify             # ← correct (not mkdocs-minify-plugin)
+  - print-site         # ← correct (not mkdocs-print-site-plugin)
