@@ -1,5 +1,5 @@
 mkdocs
-mkdocs-material  # Popular theme for branding
-mkdocs-print-site-plugin  # For printable combined HTML (browser PDF)
-mkdocs-awesome-pages-plugin #For website rendering
-mkdocs-minify-plugin #Not sure
+mkdocs-material
+mkdocs-print-site-plugin          # gives you the beautiful one-click "Print entire site" page
+mkdocs-awesome-pages-plugin       # makes navigation ordering super clean
+mkdocs-minify-plugin              # makes the site load lightning-fast (keep it!)
