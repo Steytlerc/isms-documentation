@@ -1,24 +1,24 @@
 site_name: Company Policies
 nav:
   - Home: index.md
-  - ISMS Mandatory Clauses: policies/ISP001-ISMS Mandatory Clauses.md
-  - Information Security Policy: policies/ISP003-Information Security Policy.md
-  - Access Control Policy: policies/ISP010-Access Control Policy.md
-  - Information Access Rights Policy: policies/ISP011-Information Access Rights Policy.md
-  - Identity Management Policy: policies/ISP012-Identity Management Policy.md
-  - Privileged Access Rights Policy: policies/ISP013-Privileged Access Rights Policy.md
-  - User Registration Policy: policies/ISP014-User Registration Policy.md
-  - Network Security Policy: policies/ISP015-Network Security Policy.md
-
-  # Add more .MD files as needed
+  - ISMS Mandatory Clauses: ISP001-ISMS Mandatory Clauses.md
+  - Information Security Policy: ISP003-Information Security Policy.md
+  - Information Access Control Policy: ISP010-Access Control Policy.md
+  - Information Files Access Rights Policy: ISP011-Information Access Rights Policy.md
+  - Identity Management Policy: ISP012-Identity Management Policy.md
+  - Privacy Policy: ISP013-Privacy Policy.md
+  - User Registration Policy: ISP014-User Registration Policy.md
+  - Network Security Policy: ISP015-Network Security Policy.md
+  # Add any other existing .MD files here, e.g.:
+  # - Another Policy: another-policy.md
 theme:
   name: material
   palette:
-    primary: indigo  # Company primary color
-    accent: blue     # Company accent color
-  logo: assets/logo.png  # Upload your company logo to /assets/
+    primary: indigo  # Customize as before
+    accent: blue
+  logo: assets/logo.png
   favicon: assets/favicon.ico
   font:
-    text: Roboto  # Company font (or link to Google Fonts)
+    text: Roboto
 extra_css:
-  - styles/custom.css  # For advanced branding
+  - styles/custom.css
