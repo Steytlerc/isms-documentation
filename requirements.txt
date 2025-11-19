@@ -1,3 +1,4 @@
 mkdocs
 mkdocs-material  # Popular theme for branding
 mkdocs-print-site-plugin  # For printable combined HTML (browser PDF)
+mkdocs-awesome-pages-plugin #For website rendering
