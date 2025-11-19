@@ -1,0 +1,25 @@
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  image: python:3.9
+  script:
+    - pip install -r requirements.txt
+    - mkdocs build --site-dir _site
+  artifacts:
+    paths:
+      - _site
+
+deploy:
+  stage: deploy
+  image: amazon/aws-cli
+  script:
+    - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+    - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+    - aws configure set default.region us-east-1  # Your region
+    - aws s3 sync ./_site/ s3://your-bucket-name --delete
+  dependencies:
+    - build
+  when: on_success
