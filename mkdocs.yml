@@ -20,5 +20,21 @@ theme:
   favicon: assets/favicon.ico
   font:
     text: Roboto
+  features:
+    - navigation.tabs  # Adds top tabs for multi-page nav
+    - toc.follow  # Auto-scrolls the TOC sidebar as you read
+    - navigation.sections  # Groups nav items if needed
+markdown_extensions:
+  - toc:  # Enables auto-TOC from headers; supports permalink anchors
+      permalink: true  # Adds ¶ links next to headers for easy sharing
+      title: Table of Contents  # Custom TOC title in sidebar
+  - attr_list:  # Handles { #id .class } for custom IDs/classes on elements (fixes your .TOC-Heading)
+  - tables:  # Renders | pipe tables as HTML (fixes raw +--- borders)
+  - pymdownx.superfences:  # Improved fenced code blocks (useful for any policy examples)
+  - pymdownx.details:  # Adds collapsible <details> sections (e.g., for glossaries)
+  - admonition:  # Enables note/warning/info boxes (common in security policies)
+  - footnotes:  # If your docs use [^1] style references
+plugins:
+  - search:  # Adds site-wide search bar (helpful for multiple policies)
 extra_css:
   - styles/custom.css
