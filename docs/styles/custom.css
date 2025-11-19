@@ -1,55 +1,65 @@
-/* === HERO BANNER === */
+/* === HERO – using official Purple → Dark Green gradient === */
 .hero {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #430e79, #00483a);
   color: white;
-  padding: 4rem 2rem;
-  border-radius: 0;
-  border-radius: 12px;
-  margin: 2rem 0 3rem;
-  text-align: center;
+  padding: 5rem 2rem;
+  margin: -1.5rem -1.5rem 3rem;
+  position: relative;
+  overflow: hidden;
 }
+.hero h1 { color: white; margin: 0; }
+.hero p { font-size: 1.3rem; opacity: 0.95; }
 
-/* === CARD GRID === */
+/* === CARD GRID – official brand style === */
 .grid.cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  list-style: none;
-  padding: 0;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
 }
 .grid.cards a {
   display: block;
-  background: var(--md-primary-bg-color);
+  background: white;
+  color: #333 !important;
   border-radius: 12px;
-  padding: 1.8rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
+  border-left: 6px solid #00ab4e00;
   text-decoration: none;
-  color: inherit;
 }
 .grid.cards a:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+.grid.cards a strong {
+  color: #00ab4e;
+  font-weight: 600;
 }
 
-/* === NICER TABLES === */
+/* === TABLES – Community Fibre style === */
 .md-typeset table:not([class]) {
-  font-size: .9rem;
+  font-size: .92rem;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 .md-typeset th {
-  background-color: #6366f1;
+  background-color: #430e79;
   color: white;
+  font-weight: 600;
 }
 
-/* === HEADING STYLES FROM YOUR PDF === */
-.Heading-3_Green { color: #006400; font-weight: 600; }
-.TOC-Heading { font-size: 1.4rem; color: #1f2937; border-bottom: 3px solid #6366f1; padding-bottom: .5rem; }
+/* === HEADINGS – following PDF exactly === */
+.Heading-3_Green { color: #00ab4e; font-weight: 700; font-size: 1.4rem; margin-top: 2rem; }
 
-/* === FOOTER FOR PRINT === */
-@media print {
-  .md-footer { display: block !important; }
-  body { font-size: 10pt; }
+/* === YELLOW CALLOUT (use sparingly) === */
+.yellow-flag {
+  background: #fcd900;
+  color: #430e79;
+  font-weight: bold;
+  padding: 0.2rem 0.8rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 0.5rem 0;
 }

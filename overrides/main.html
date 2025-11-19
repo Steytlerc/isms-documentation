@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block htmlclass %}tx-theme-cfl{% endblock %}
+
+{% block extrahead %}
+  <style>
+    :root {
+      --md-primary-fg-color:        #430e79;
+      --md-primary-fg-color--light: #66329e;
+      --md-primary-fg-color--dark:  #2e0b54;
+      --md-accent-fg-color:         #00ab4e;
+      --md-accent-fg-color--light:  #33bb7a;
+    }
+    [data-md-color-scheme="slate"] {
+      --md-primary-fg-color:        #00483a;
+      --md-accent-fg-color:         #00ab4e;
+    }
+  </style>
+{% endblock %}
