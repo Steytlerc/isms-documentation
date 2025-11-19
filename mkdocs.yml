@@ -1,56 +1,82 @@
-site_name: Company Policies
-nav:
-  - Home: index.md
-  - ISMS Mandatory Clauses: ISP001-ISMS Mandatory Clauses.md
-  - Information Security Policy: ISP003-Information Security Policy.md
-  - Information Access Control Policy: ISP010-Access Control Policy.md
-  - Information Files Access Rights Policy: ISP011-Information Access Rights Policy.md
-  - Identity Management Policy: ISP012-Identity Management Policy.md
-  - Privacy Policy: ISP013-Privacy Policy.md
-  - User Registration Policy: ISP014-User Registration Policy.md
-  - Network Security Policy: ISP015-Network Security Policy.md
+site_name: Community Fibre – Policies & ISMS
+site_url: https://policies.communityfibre.co.uk   # change to your real domain
+site_description: Information Security Management System & Company Policies
+site_author: Community Fibre Limited
+
 theme:
   name: material
-  palette:
-    primary: indigo
-    accent: blue
-  logo: assets/logo.png  # Add your Community Fibre logo here (place in docs/assets/)
-  favicon: assets/favicon.ico
+  language: en
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  icon:
+    repo: fontawesome/brands/gitlab
   font:
     text: Roboto
+    code: Roboto Mono
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
   features:
     - navigation.tabs
-    - toc.follow
+    - navigation.tabs.sticky
     - navigation.sections
-    - content.code.annotate  # For any code blocks
-    - navigation.top  # Back-to-top button
-  palette:
-  - scheme: default  # Light mode
-    primary: indigo
-    accent: blue
-  - scheme: slate    # Dark mode toggle
-    primary: black
-    accent: teal
-features:
-  - content.tabs.link  # Better navigation
-  - navigation.instant # Faster page loads
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.action.edit   # if you connect to GitLab
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/company/community-fibre-limited
+    - icon: fontawesome/solid/globe
+      link: https://www.communityfibre.co.uk
+
+extra_css:
+  - styles/custom.css
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js
+  - javascripts/tablesort.js   # optional – makes tables sortable
+
 markdown_extensions:
-  - toc:
-      permalink: true
-      title: Table of Contents
-      slugify: !!python/name:pymdownx.slugs.uslugify  # Better slugs for anchors
-  - attr_list:  # For {#id .class} on headings/elements
-  - tables:  # Pipe tables
-  - pymdownx.superfences:  # Fenced code, diagrams
-  - pymdownx.details:  # Collapsible sections (e.g., for glossaries)
-  - admonition:  # Note/warning boxes
-  - footnotes:  # For references
-  - pymdownx.tabbed:  # Tabbed content if needed for complex sections
-  - pymdownx.highlight:  # Code highlighting
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets  # Include snippets from other files if reusable
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: " #"
+      title: On this page
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
 plugins:
   - search
-  - print-site  # Adds a combined printable page
-extra_css:
-  - styles/custom.css  # Your custom styles (keep as before)
+  - awesome-pages   # optional but very useful for ordering
+  - minify:         # makes the site load faster
+      minify_html: true
