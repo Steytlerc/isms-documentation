@@ -68,11 +68,9 @@ jobs:
           aws s3 sync ./_site/ s3://company-policies-website --delete --cache-control "public, max-age=60"
 
       - name: Invalidate CloudFront
-        uses: aws-actions/configure-aws-credentials@v4  # if not already configured
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-west-2
-
-      - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
-        if: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID != '' }}  # only run if the secret is set
+        if: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}   # truthy check – runs only if the secret exists and is non-empty
+        run: |
+        
+        aws cloudfront create-invalidation \
+        --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+        --paths "/*"
