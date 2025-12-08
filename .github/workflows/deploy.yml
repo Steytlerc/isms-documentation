@@ -58,10 +58,7 @@ jobs:
       - name: Deploy to S3
         run: aws s3 sync _site/ s3://company-policies-website --delete --cache-control "public, max-age=60"
 
-            - name: Invalidate CloudFront cache
+      - name: Invalidate CloudFront cache
         if: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-        # ← THIS LINE MUST HAVE ${{ }}
         run: |
-          aws cloudfront create-invalidation \
-            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
-            --paths "/*"
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
