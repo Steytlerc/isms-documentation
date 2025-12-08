@@ -68,9 +68,8 @@ jobs:
           aws s3 sync ./_site/ s3://company-policies-website --delete --cache-control "public, max-age=60"
 
       - name: Invalidate CloudFront
-        if: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}   # truthy check – runs only if the secret exists and is non-empty
+        if: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
         run: |
-        
-        aws cloudfront create-invalidation \
-        --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
-        --paths "/*"
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
